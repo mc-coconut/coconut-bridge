@@ -2,6 +2,7 @@ package dev.coconut.javahooks;
 
 import dev.coconut.av.Coconut;
 import dev.coconut.javahooks.impl.java.lang.ProcessBuilderTransformer;
+import dev.coconut.javahooks.impl.java.net.URLClassLoaderTransformer;
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.tree.ClassNode;
@@ -15,7 +16,8 @@ public class JavaHooks {
 
 
     private static List<IClassTransformer> transformers = Arrays.asList(
-            new ProcessBuilderTransformer()
+            new ProcessBuilderTransformer(),
+            new URLClassLoaderTransformer()
     );
 
     public static byte[] process(String className, byte[] classData) {
