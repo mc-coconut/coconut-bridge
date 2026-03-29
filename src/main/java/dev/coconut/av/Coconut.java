@@ -28,8 +28,4 @@ public class Coconut {
     }
 
     public native void terminate(String detectionType, String check, String message);
-
-
-
-
 }
